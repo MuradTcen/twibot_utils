@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from pymorphy2 import MorphAnalyzer
-from twitterbot_utils.Tweet import Tweet
-from twitterbot_utils.Twibot import Twibot
+from twibot_utils.Tweet import Tweet
+from twibot_utils.Twibot import Twibot
 from random import choice
 import re
 

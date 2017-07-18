@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from twitterbot_utils.TwiAuth import TwiAuth
+from twibot_utils.TwiAuth import TwiAuth
 from bots.TwiMorph import TwiMorph
 
 
