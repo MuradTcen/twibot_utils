@@ -6,6 +6,9 @@ from tweepy import OAuthHandler, API
 
 
 class TwiAuth():
+    '''
+        getting access token and secret
+    '''
 
     def __init__(self, *argv):
         self.consumer_key = os.environ.get('consumer_key')
