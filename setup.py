@@ -9,11 +9,9 @@ def read(*paths):
         return f.read()
 
 setup(
-    name='twitterbot_utils',
+    name='twibot_utils',
     version='0.0.01',
-    # author='Oleg Strizhechenko',
     author='MuradTcen',
-    # author_email='oleg.strizhechenko@gmail.com',
     author_email='muradtcen@gmail.com',
     license='GPL',
     url='https://github.com/muradtcen/twibot_utils',

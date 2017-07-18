@@ -34,9 +34,9 @@ test:
 	nosetests
 
 build: clean
-	python setup.py sdist
-	python setup.py bdist_wheel
+	python3 setup.py sdist
+	python3 setup.py bdist_wheel
 
 upload: clean
-	python setup.py sdist upload
+	python3 setup.py sdist upload
 	# python setup.py bdist_wheel upload
