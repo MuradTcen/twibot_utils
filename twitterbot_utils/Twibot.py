@@ -13,7 +13,7 @@ class Twibot(object):
         self.api = api
         self.api.wait_on_rate_limit = True
         self.logging = logging
-        self.file = 'source.json'
+        self.file = 'src/source.json'
 
     def do_single_tweet(self, tweet):
         try:

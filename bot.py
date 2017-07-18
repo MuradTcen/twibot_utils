@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from twitterbot_utils.TwiAuth import TwiAuth
-from twitterbot_utils.TwiMorph import TwiMorph
+from bots.TwiMorph import TwiMorph
 
 
 def main():
@@ -13,6 +13,7 @@ def main():
         # bot = Twibot(auth.api)
         # bot.do_single_tweet('tweeet')
         bot = TwiMorph(auth.api, logging=True)
+        # bot = TwiMorph(auth.api)
         # bot.get_all_tweets('Kn1fecult')
         # bot.write_json()
         bot.read_to_list()

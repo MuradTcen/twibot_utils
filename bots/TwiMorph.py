@@ -18,25 +18,21 @@ class TwiMorph(Twibot):
 
 	def get_noun_from_string(self):
 		def get_if_noun(word):
-			print(word)
 			w = MorphAnalyzer().parse(word)[0]
-			print(w.tag)
+			# if self.logging: print(word, w.tag)
 			if 'NOUN' in w.tag:
 				return w.normal_form
 
-		self.use_only_russian_words_in_string()
-		words = self.random_string.strip().split()
-		words = list(map(get_if_noun,words))
-		print(words)
-		words = [word for word in words if word]
-		print(words)
-		print(len(words))
-		while len(words) == 0:
-			print('1')
+		self.words = self.random_string.strip().split()
+		self.words = list(map(get_if_noun,self.words))
+		self.words = [word for word in self.words if word]
+		# if self.logging: print(self.words)
+		while len(self.words) == 0:
+			# if logging: print('in loop')
 			self.get_random_string_from_source()
 			self.use_only_russian_words_in_string()
 			self.get_noun_from_string()
-		self.word = choice(words)
+		self.word = choice(self.words)
 
 	def make_tweet(self):
 		self.tweet = Tweet(self.template % self.word)
@@ -46,6 +42,7 @@ class TwiMorph(Twibot):
 
 	def tweet(self):
 		self.get_random_string_from_source()
+		self.use_only_russian_words_in_string()
 		self.get_noun_from_string()
 		self.make_tweet()
 		self.do_single_tweet(self.tweet.text)

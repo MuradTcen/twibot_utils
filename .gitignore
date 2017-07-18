@@ -1,0 +1,10 @@
+*.py[co]
+.idea
+env
+testenv
+*.egg-info/
+build/
+dist/
+src/
+trash/
+__pycache__/
