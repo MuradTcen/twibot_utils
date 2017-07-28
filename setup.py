@@ -10,7 +10,7 @@ def read(*paths):
 
 setup(
     name='twibot_utils',
-    version='0.0.01',
+    version='1.2.0.dev1',
     author='MuradTcen',
     author_email='muradtcen@gmail.com',
     license='GPL',
