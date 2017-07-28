@@ -83,7 +83,7 @@ class TwiAuth():
         access_secret from json file 
 
         '''
-        self.data = json.load(open('src/credentials.json'))
+        self.data = json.load(open('credentials.json'))
         self.access_token = self.data['access_token']
         self.access_secret = self.data['access_secret']
         self.consumer_key = self.data['consumer_key']
