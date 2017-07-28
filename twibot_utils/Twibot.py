@@ -8,18 +8,34 @@ get_text_from_json_tweet = (lambda tweet: tweet._json['text'])
 
 
 class Twibot(object):
+    '''
 
-    def __init__(self, api, logging=False):
+    class Twibot
+    there some base functional for bot
+    more functional is implemented overwrited "shell"
+    getting api example 
+    bot = Somebot(api) 
+
+    '''
+    def __init__(self, api, logging=False, filename='src/source.json'):
+        '''
+        
+
+
+        '''
         self.api = api
         self.api.wait_on_rate_limit = True
         self.logging = logging
-        self.file = 'src/source.json'
+        self.file = filename
 
     def do_single_tweet(self, tweet):
+        '''
+
+        print(tweet)
+
+        '''
         try:
             self.api.update_status(tweet)
-        # except TweepError as e:
-        #     print('tweeperror ' + e)
         except Exception as e:
             print('exception ', e)
 
@@ -35,6 +51,12 @@ class Twibot(object):
                 tweet.destroy()
 
     def get_all_tweets(self, screen_name):
+        '''
+        
+        getting ~2.3k tweets from screen_name (e.g. "Twitter")
+        its writing to source_tweets list
+
+        '''
         all_tweets = []
         new_tweets = self.api.user_timeline(screen_name=screen_name, count=200)
         all_tweets.extend(new_tweets)
@@ -52,11 +74,24 @@ class Twibot(object):
         self.source_tweets = all_tweets
 
     def write_list(self):
+        '''
+    
+        writing source_tweets to json file 
+
+        '''
         data = self.source_tweets
         with open(self.file, 'w') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
-    def read_to_list(self):
+    def read_to_list(self, filename=''):
+        '''    
+
+        reading from json_file to source_tweets
+        default case: json file its writting before
+        via write_list()
+
+        '''    
+        if not filename: filename = self.file
         try:
             data = json.load(open(self.file))
         except:
