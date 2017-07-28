@@ -5,7 +5,6 @@ testenv
 *.egg-info/
 build/
 dist/
-src/
 trash/
 __pycache__/
 twitterbot_utils/__pycache__/
